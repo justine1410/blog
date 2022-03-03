@@ -41,7 +41,7 @@ function App() {
           <Route exact path={routes.HOME} component={Home} />
           <Route  path={routes.CONTACT} component={Contact} />
           <Route exact path={routes.ARTICLES} component={Articles} />
-          <Route exact path={routes.ARTICLES + '/:slug'} component={Article}/>
+          <Route exact path={routes.ARTICLES + '/:slug'} component={Article} />
           {user ? <Route exact path={  routes.MANAGE_ARTICLE} component={ManageArticle}/> : null}
           <Route component={PageNotFound }/>
         </Switch>

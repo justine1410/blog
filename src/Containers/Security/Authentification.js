@@ -102,7 +102,7 @@ function Authentification(props){
     function loginClickedHandler(){
         const user ={
                 email : inputs.email.value,
-                pseudo : inputs.pseudo.value,
+                password : inputs.password.value,
         };
 
         fire

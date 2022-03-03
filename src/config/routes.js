@@ -1,9 +1,9 @@
 const routes ={
-    HOME: '/accueil',
+    HOME: '/',
     CONTACT: '/contact',
     ARTICLES : '/articles',
     MANAGE_ARTICLE: '/admin/article',
-    AUTHENTIFICATION:'/'
+    AUTHENTIFICATION:'/authentification'
 }
 
 export default routes;

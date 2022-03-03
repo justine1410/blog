@@ -10,25 +10,8 @@ function Article(props){
 
     // State
     const [article, setArticle] = useState({})
-
     const [user, setUser] = useState('')
-
-    useEffect(()=>{
-        authListener()
-      },[])
-
-    function authListener(){
-        fire.auth().onAuthStateChanged(user=>{
-            if(user){
-                setUser(user) 
-                console.log(user.email);
-
-              }else{
-                setUser('')
-              }
-        })
-    }
-
+    
 
     // ComponentDitMount
 
@@ -54,6 +37,12 @@ function Article(props){
         })
     }, [])
 
+    useEffect(()=>{
+        authListener()
+      },[])
+    
+
+
     // Fonction
     function deleteClickedHandler(){
         fire.auth().currentUser.getIdToken()
@@ -72,9 +61,20 @@ function Article(props){
        
     }    
 
+    function authListener(){
+        fire.auth().onAuthStateChanged(user =>{
+          if(user){
+            setUser(user)
+          }else{
+            setUser('')
+          }
+        });
+      };
+
+
     // Variable
     let date = new Date(article.date).toLocaleDateString('fr-FR');
-    
+    console.log(user);
     return(
         <div className="container">
             <h1>{article.titre} </h1>
@@ -89,9 +89,9 @@ function Article(props){
                         state: { article: article}
 
                     }}>
-                    {user.email == "johndoe@google.com" ? <button >Mofidier</button> : null}
+                    {user? <button >Mofidier</button> : null}
                     </Link>
-                    {user.email == "johndoe@google.com" ? <button onClick={deleteClickedHandler} >Supprimer</button> : null}
+                    {user? <button onClick={deleteClickedHandler} >Supprimer</button> : null}
                 </div>
             </div>
         
