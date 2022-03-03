@@ -1,0 +1,19 @@
+.button{
+    border: 0;
+    width: 200px;
+    margin: auto;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    background: var(--fondBouton); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+.button:hover{
+    background: var(--fondHover); /* W3C, IE 10+/ Edge, Firefox 16+, Chroverme 26+, Opera 12+, Safari 7+ */
+}
+
+.button a {
+    color: white;
+    text-decoration: none;
+}

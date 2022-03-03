@@ -1,0 +1,40 @@
+.lead{
+    color: rgba(0,0,0, .5);
+    margin-bottom: 15px;
+}
+
+.content{
+    padding: 30px;
+    text-align: left;
+}
+
+.author{
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.author span{
+    font-size: .9rem;
+}
+
+.button{
+    display: block;
+    margin-top: 30px;
+    text-align: right;
+}
+.button button{
+    border: 0;
+    padding: 10px 15px;
+    color: white;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    background: var(--fondBouton)
+}
+.button button:hover{
+    background: var(--fondHover); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+

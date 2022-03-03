@@ -1,0 +1,33 @@
+.redirect a{
+    text-decoration: none;
+    border: solid 1px ;
+    border-radius: 20px;
+    padding : 10px;
+    color: black;
+}
+.redirect a:hover{
+    background-color: var(--fondHover);
+    color: #ffffff;
+}
+
+.redirect{
+    background:var(--degrade); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    margin-top: 80px;
+    padding: 25px;
+    color: #ffffff;
+    border-radius: 20px;
+    width: 400px;
+    height: 400px;
+    font-size: 20px;
+}
+
+.redirect h1{
+    font-size: 100px;
+    margin: 20px;
+    color: white;
+}
+

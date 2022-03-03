@@ -1,0 +1,13 @@
+.alert{
+    margin-bottom: 15px;
+    background-color: #DA1212;
+    border: 1px solid #B33030;
+    color: white;
+    border-radius: 4px;
+}
+.alert p{
+    margin: 5px;
+}
+.connexion{
+    opacity: 0.5;
+}

@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+*{
+  box-sizing: border-box;
+}
+
+:root{
+  --red: #b00;
+  --primaryColor :#40b7ad;
+  --secondaryColor :#fb743e;
+  --degrade : linear-gradient(to top, #99f2c8, #40b7ad);
+  --fondBouton : #40b7ad;
+  --fondHover : linear-gradient(to top, #f5af19, #f12711);
+}
+

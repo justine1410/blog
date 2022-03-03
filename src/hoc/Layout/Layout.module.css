@@ -1,0 +1,44 @@
+:global .container{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+:global .submit{
+    border: 0;
+    padding: 10px 15px;
+    color: white;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    background: var(--fondBouton)
+  }
+  
+  :global .submit:hover{
+    background: var(--fondHover); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  
+  :global .submit:disabled{
+    opacity: .3;
+    cursor: not-allowed;
+  }
+
+  :global .Form{
+      width: 80%;
+      max-width: 400px;
+      background: var(--degrade); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      padding: 30px;
+      margin: auto;
+      border-radius: 10px; 
+  }
+
+.Layout{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.content{
+    flex-grow: 1;
+}

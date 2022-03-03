@@ -1,0 +1,29 @@
+.button{
+    border: 0;
+    padding: 10px 15px;
+    color: white;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    background: var(--fondBouton); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+.button:hover{
+    background: var(--fondHover); /* W3C, IE 10+/ Edge, Firefox 16+, Chroverme 26+, Opera 12+, Safari 7+ */
+}
+
+.contact,
+.contact a{
+    margin-top: 20px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 25px;
+    background: var(--fondHover); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-clip:text;
+    color:transparent;
+}
+
+h1{
+    color:var(--primaryColor);
+}
