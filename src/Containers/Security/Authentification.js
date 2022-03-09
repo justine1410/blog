@@ -3,6 +3,7 @@ import React,{useState, useEffect} from "react";
 import {checkValidity} from '../../shared/utility';
 import classes from './Authentification.module.css';
 import fire from "../../config/firebase";
+import { toast } from 'react-toastify'
 
 // Composant
 import Input from '../../Components/UI/Input/Input';
@@ -86,6 +87,7 @@ function Authentification(props){
             .auth()
             .createUserWithEmailAndPassword(user.email, user.password )
             .then(response =>{
+                toast.success('Bienvenue')
                 props.history.replace(routes.HOME)
             })
             .catch(error=>{
@@ -109,7 +111,8 @@ function Authentification(props){
             .auth()
             .signInWithEmailAndPassword(user.email, user.password)
             .then(response=>{
-                console.log(response);
+                toast.success('Bonjour')
+
                 props.history.replace(routes.HOME)
             })
             .catch(error=>{

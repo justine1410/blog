@@ -25,7 +25,7 @@ function Contact(props){
             <p>Vous pouvez vois le reste de mon travail à ces adresses</p>
             <button onClick={ siteClickedHandler } className={ classes.button }> Portfolio </button >
             <button onClick={ gitClickedHandler } className={ classes.button }> GitHub </button>
-            <button onClick={ linkedinClickedHandler } className={ classes.button }> GitHub </button>
+            <button onClick={ linkedinClickedHandler } className={ classes.button }> Linkedin </button>
 
                   
             <Route path ={props.match.url + '/site'} render = {()=> 

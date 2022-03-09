@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 import axios from '../../../config/axios-firebase';
 import routes from '../../../config/routes';
 import {checkValidity} from '../../../shared/utility';
-import fire from '../../../config/firebase'
+import fire from '../../../config/firebase';
+import { toast } from 'react-toastify'
 
 // Composant
 import Input from '../../../Components/UI/Input/Input'
@@ -179,6 +180,7 @@ function ManageArticle(props){
            if(props.location.state && props.location.state.article){
                axios.put('/articles/'+props.location.state.article.id +'.json?auth='+ token , article)
                .then(response=>{
+                    toast.success('Article modifié avec succès !');
                    props.history.replace(routes.ARTICLES + '/' + article.slug)
    
                })
