@@ -21,7 +21,7 @@ function Navigation(props){
            <ul className= {classes.Navigation} >
                 <NavigationItem exact to={routes.HOME}>Accueil</NavigationItem> 
                 <NavigationItem to={routes.ARTICLES} >Articles</NavigationItem> 
-                {props.user ? <NavigationItem exact to={  routes.MANAGE_ARTICLE}>Ajouter</NavigationItem> : null}
+                {props.user.email == 'justine1410@live.fr' ? <NavigationItem exact to={  routes.MANAGE_ARTICLE}>Ajouter</NavigationItem> : null}
                 <NavigationItem to={routes.CONTACT}>Contact</NavigationItem> 
                 {!props.user ? <NavigationItem to={routes.AUTHENTIFICATION} > Authentification </NavigationItem> : null}
                 {props.user ? <button onClick={logoutClickedHandler} className="submit" >Déconnexion</button> : null}

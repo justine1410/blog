@@ -1,6 +1,5 @@
 // Librairie
 import React, { useState, useEffect } from "react";
-import classes from './ManageArticle.module.css'
 import axios from '../../../config/axios-firebase';
 import routes from '../../../config/routes';
 import {checkValidity} from '../../../shared/utility';
@@ -31,20 +30,6 @@ function ManageArticle(props){
             errorMessage: 'Le titre doit avoir entre 5 et 85 caractères'
 
         },
-        // files:{
-        //     elementType:'input',
-        //     elementConfig:{
-        //         type:'file',
-        //         placeholder: ""
-        //     },
-        //     value: '',
-        //     label: 'photo',
-        //     valid: props.location.state && props.location.state.article ? true : false,
-        //     validation:{ },
-        //     touched: false,
-        //     errorMessage: ''
-
-        // },
         accroche:{
             elementType:'textarea',
             elementConfig:{ },
@@ -124,8 +109,7 @@ function ManageArticle(props){
     function authListener(){
         fire.auth().onAuthStateChanged(user=>{
             if(user){
-                setUser(user.uid) 
-                console.log(user.uid);
+                setUser(user) 
               }else{
                 setUser('')
               }
@@ -170,6 +154,7 @@ function ManageArticle(props){
     
         return str;
     }
+    
     function formHandler(event){
         event.preventDefault();
 
@@ -178,13 +163,13 @@ function ManageArticle(props){
         const article ={
         
            titre:inputs.titre.value,
-        //    files:inputs.files,
            contenu : inputs.contenu.value,
            auteur : inputs.auteur.value,
            brouillon : inputs.brouillon.value,
            accroche : inputs.accroche.value,
            date: Date.now(),
            slug: slug,
+           commentaire: '',
            userId:user
 
        };
@@ -204,7 +189,6 @@ function ManageArticle(props){
           else{
                axios.post('/articles.json?auth='+token , article)
                .then(response=>{
-                   console.log(response);
                    props.history.replace(routes.ARTICLES)
        
                })
@@ -224,7 +208,7 @@ function ManageArticle(props){
         <form className="Form" onSubmit={(e) => formHandler(e)}>
             {formElementsArray.map(formElement=>(
                 <Input
-                    key={formElement.id}
+                    key={formElement.id} 
                     id={formElement.id}
                     value={formElement.config.value}
                     label={formElement.config.label}

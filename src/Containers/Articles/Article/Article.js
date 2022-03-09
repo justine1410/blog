@@ -61,10 +61,12 @@ function Article(props){
        
     }    
 
+
     function authListener(){
         fire.auth().onAuthStateChanged(user =>{
           if(user){
             setUser(user)
+            console.log(user.email);
           }else{
             setUser('')
           }
@@ -74,7 +76,8 @@ function Article(props){
 
     // Variable
     let date = new Date(article.date).toLocaleDateString('fr-FR');
-    console.log(user);
+
+
     return(
         <div className="container">
             <h1>{article.titre} </h1>
@@ -89,9 +92,10 @@ function Article(props){
                         state: { article: article}
 
                     }}>
-                    {user? <button >Mofidier</button> : null}
+                        {user.email == 'justine1410@live.fr' ? <button >Mofidier</button> : null}
                     </Link>
-                    {user? <button onClick={deleteClickedHandler} >Supprimer</button> : null}
+
+                    {user.email == 'justine1410@live.fr'? <button onClick={deleteClickedHandler} >Supprimer</button> : null}
                 </div>
             </div>
         
@@ -101,6 +105,7 @@ function Article(props){
                     Publié le : {date}
                 </span>
             </div>
+
             
         </div>
     );

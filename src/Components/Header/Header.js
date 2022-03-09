@@ -11,7 +11,7 @@ function Header(props){
     // fonction
     const history = useHistory()
     function returnAccueil(){
-        let url = '/accueil'
+        let url = '/'
         history.push(url) 
     }
 

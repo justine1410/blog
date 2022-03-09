@@ -49,7 +49,11 @@ function Home(){
     return (
         <>
             <h1>Accueil</h1>
-            
+            <p>
+                Je vous présente un blog réalisé avec REACT et Firebase, <br/>
+                <br/>
+                Ce site est une version très simple d'un blog il devrait évoluer avec le temp
+            </p>
             <DisplayedArticles articles={articles} />
             <div className= {classes.button}>
                 <Link  to={routes.ARTICLES}>

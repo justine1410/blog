@@ -7,28 +7,42 @@ import classes from './Contact.module.css';
 function Contact(props){
 
     // fonction
-    const emailClickedHandler= ()=>{
-        props.history.push(props.match.url + '/email')
+    const siteClickedHandler= ()=>{
+        props.history.push(props.match.url + '/site')
     }
 
-    const callClickedHandler = ()=>{
-        props.history.replace(props.match.url + '/telephone')
+    const gitClickedHandler = ()=>{
+        props.history.replace(props.match.url + '/git')
+    }
+
+    const linkedinClickedHandler = ()=>{
+        props.history.replace(props.match.url + '/linkedin')
     }
 
     return (
         <>
             <h1 className={classes.h1}>Contact</h1>
-            <p>Par quel moyen de contact souhaitez vous échanger ?</p>
-            <button onClick={ emailClickedHandler } className={ classes.button }> Email </button >
-            <button onClick={ callClickedHandler } className={ classes.button }> Téléphone </button>
+            <p>Vous pouvez vois le reste de mon travail à ces adresses</p>
+            <button onClick={ siteClickedHandler } className={ classes.button }> Portfolio </button >
+            <button onClick={ gitClickedHandler } className={ classes.button }> GitHub </button>
+            <button onClick={ linkedinClickedHandler } className={ classes.button }> GitHub </button>
+
                   
-            <Route path ={props.match.url + '/email'} render = {()=> 
+            <Route path ={props.match.url + '/site'} render = {()=> 
                 <div className={classes.contact}>
-                    <a  href="mailto:johndoe@google.com">johndoe@google.com"</a>
+                    <a  href="https://fidweb-dev.fr">fidweb</a>
                 </div>
             } />
-            <Route path ={props.match.url + '/telephone' }render={()=> 
-                <p className={classes.contact}> 06 06 06 06 06 </p>
+            <Route path ={props.match.url + '/git' }render={()=> 
+                <div className={classes.contact} >
+                    <a  href="https://github.com/justine1410">GitHub</a>
+                </div>
+            } />
+
+            <Route path ={props.match.url + '/linkedin'} render = {()=> 
+                <div className={classes.contact}>
+                    <a  href="https://www.linkedin.com/in/justinefidel/">Linkedin</a>
+                </div>
             } />
         </>
     )
