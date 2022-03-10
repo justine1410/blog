@@ -11,6 +11,11 @@ import routes from '../../config/routes';
 
 
 function Authentification(props){
+    // Component did update
+    useEffect(()=>{
+        document.title = "Authentification";
+
+    })
 
     // State
     const [inputs, setInputs] = useState({

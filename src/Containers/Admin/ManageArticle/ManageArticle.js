@@ -107,6 +107,12 @@ function ManageArticle(props){
         authListener()
       },[])
 
+      
+    useEffect(()=>{
+        document.title = "Gerer un article";
+
+    })
+
     function authListener(){
         fire.auth().onAuthStateChanged(user=>{
             if(user){

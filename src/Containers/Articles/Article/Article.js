@@ -5,6 +5,8 @@ import classes from './Article.module.css';
 import routes from '../../../config/routes'
 import { Link } from "react-router-dom";
 import fire from '../../../config/firebase';
+import moment from 'moment';
+import 'moment/locale/fr';
 
 function Article(props){
 
@@ -35,7 +37,13 @@ function Article(props){
         .catch(error=>{
             console.log(error);
         })
+
     }, [])
+
+    useEffect(()=>{
+        document.title = article.titre;
+
+    })
 
     useEffect(()=>{
         authListener()
@@ -75,8 +83,9 @@ function Article(props){
 
 
     // Variable
-    let date = new Date(article.date).toLocaleDateString('fr-FR');
-
+    // let date = new Date(article.date).toLocaleDateString('fr-FR');
+    moment.locale('fr');  
+    let date = moment.unix(article.date/ 1000).format('LLLL');
 
     return(
         <div className="container">
@@ -102,7 +111,7 @@ function Article(props){
             <div className={classes.author}>
                 <b>{article.auteur} </b>
                 <span>
-                    Publié le : {date}
+                    Publié {date}
                 </span>
             </div>
 

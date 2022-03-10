@@ -37,6 +37,12 @@ function Articles(props){
 
     },[])
 
+    
+    useEffect(()=>{
+        document.title = "Article";
+
+    })
+
     // Fonction
    
 

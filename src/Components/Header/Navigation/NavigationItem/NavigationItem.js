@@ -1,7 +1,8 @@
 // Librairies
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import classes from './NavigationItem.module.css'
+import classes from './NavigationItem.module.css';
+import PropTypes from 'prop-types'
 
 // composant
 
@@ -18,7 +19,12 @@ function NavigationItem(props){
             </NavLink>
         </li>
     )
-
 }
+
+NavigationItem.propTypes ={
+    exact : PropTypes.bool,
+    to : PropTypes.string,
+    children : PropTypes.string
+};
 
 export default NavigationItem;

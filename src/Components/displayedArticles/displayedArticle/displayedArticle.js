@@ -3,6 +3,7 @@ import React from "react";
 import classes from "./displayedArticle.module.css"
 import { Link } from 'react-router-dom';
 import routes from "../../../config/routes";
+import PropTypes from 'prop-types';
 
 function DisplayedArticle(props){
     return(
@@ -15,5 +16,8 @@ function DisplayedArticle(props){
         </Link>
     )
 }
+DisplayedArticle.propTypes={
+    article: PropTypes.object
+};
 
 export default DisplayedArticle 

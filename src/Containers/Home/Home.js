@@ -44,6 +44,12 @@ function Home(){
 
     
         },[])
+
+        
+    useEffect(()=>{
+        document.title = 'Accueil';
+
+    })
     
     
     return (

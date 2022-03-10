@@ -1,10 +1,15 @@
 // Librairie
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Route } from 'react-router-dom';
 import classes from './Contact.module.css';
 
 
 function Contact(props){
+    
+    useEffect(()=>{
+        document.title = "Contact";
+
+    })
 
     // fonction
     const siteClickedHandler= ()=>{
